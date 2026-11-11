@@ -1,0 +1,1219 @@
+/* ==========================================================
+   ШРИФТЫ
+   Основные шрифты подключаются из Google Fonts (ссылка в HTML).
+   Эти три правила — запасной вариант: если интернета нет,
+   возьмутся такие же шрифты, установленные в системе.
+   ========================================================== */
+
+@font-face {
+  font-family: "Alice Local";
+  src: local("Alice Regular"), local("Alice");
+}
+
+@font-face {
+  font-family: "Montserrat Local";
+  src: local("Montserrat Regular"), local("Montserrat");
+}
+
+@font-face {
+  font-family: "Montserrat Local";
+  font-weight: 700;
+  src: local("Montserrat Bold"), local("Montserrat-Bold");
+}
+
+/* ==========================================================
+   1. ОБЩИЕ НАСТРОЙКИ
+   ========================================================== */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Alice", "Alice Local", Georgia, serif;
+  background: #fff;
+  color: #000;
+}
+
+/* Блок по центру страницы. Максимум 1440px — как в макете,
+   на маленьком экране он просто становится уже. */
+.wrap {
+  width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 100px;
+}
+
+/* Общий вид кнопок. padding-bottom сдвигает текст
+   на пару пикселей вверх — так он стоит по центру, как в макете */
+.btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-bottom: 3px;
+  background: #364c6b;
+  color: #fff;
+  font-family: inherit;
+  font-size: 30px;
+  text-decoration: none;
+  border: 0;
+  cursor: pointer;
+}
+
+.btn-small {
+  width: 300px;
+  height: 50px;
+  border-radius: 25px;
+}
+
+/* Иконки из макета лежат в отдельном невидимом svg */
+.sprite {
+  position: absolute;
+  width: 0;
+  height: 0;
+  overflow: hidden;
+}
+
+/* ==========================================================
+   2. ШАПКА
+   ========================================================== */
+
+.header {
+  background: #b3cae0;
+}
+
+.header-inner {
+  display: flex;
+  align-items: center;
+  height: 100px;
+  padding: 0 50px 0 6px;
+}
+
+.logo {
+  position: relative;
+  top: 2px;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  color: #000;
+  text-decoration: none;
+}
+
+.logo-text {
+  margin-left: 4px;
+  font-family: "Montserrat", "Montserrat Local", Arial, sans-serif;
+  font-size: 32px;
+}
+
+.menu {
+  display: flex;
+  gap: 12px;
+  margin-left: 59px;
+}
+
+.menu a {
+  color: #000;
+  font-size: 20px;
+  text-decoration: none;
+}
+
+.header-btn {
+  width: 250px;
+  height: 65px;
+  margin-left: auto;
+  border-radius: 33px;
+}
+
+/* ==========================================================
+   3. ПЕРВЫЙ ЭКРАН
+   ========================================================== */
+
+.hero {
+  background: #364c6b;
+  color: #fff;
+}
+
+.hero-inner {
+  padding-top: 111px;
+  padding-bottom: 104px;
+}
+
+.hero-title {
+  margin-left: 9px;
+  font-size: 64px;
+  font-weight: 400;
+}
+
+.hero-text {
+  margin: 20px 0 0 9px;
+  font-size: 24px;
+}
+
+/* Белая карточка с формой заказа */
+.order {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  gap: 50px;
+  width: 850px;
+  max-width: 100%;
+  margin-top: 21px;
+  padding: 28px 40px 27px;
+  background: #fff;
+  border-radius: 30px;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+}
+
+.field label {
+  margin-bottom: 21px;
+  color: #959393;
+  font-size: 25px;
+}
+
+.field input {
+  width: 250px;
+  height: 65px;
+  padding: 0 20px;
+  background: #e2e8f0;
+  border: 0;
+  border-radius: 20px;
+  font-family: inherit;
+  font-size: 24px;
+}
+
+.order .btn {
+  width: 170px;
+  height: 65px;
+  border-radius: 33px;
+}
+
+/* ==========================================================
+   4. ПРЕИМУЩЕСТВА
+   ========================================================== */
+
+.features {
+  padding: 65px 0 80px;
+  background: #b3cae0;
+}
+
+.features-title {
+  margin-bottom: 69px;
+  font-size: 32px;
+  font-weight: 400;
+  text-align: center;
+}
+
+/* Карточки идут в ряд и переносятся на новую строку,
+   когда места не хватает */
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 47px;
+}
+
+.card {
+  width: 250px;
+  min-height: 250px;
+  padding: 16px 10px 24px 22px;
+  background: #fff;
+  border-radius: 30px;
+}
+
+.card-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 72px;
+  height: 72px;
+  margin-left: -5px;
+}
+
+.card-title {
+  margin-top: 12px;
+  font-size: 28px;
+  font-weight: 400;
+}
+
+.card-text {
+  margin-top: 7px;
+  color: #696969;
+  font-size: 24px;
+}
+
+/* ==========================================================
+   5. ЗАКАЗ ПО ТЕЛЕФОНУ
+   ========================================================== */
+
+.cta {
+  background: linear-gradient(289deg, #96afd2 0%, #4f5c6f 43.6%, #222d3c 71.8%, #08090b 100%);
+  color: #fff;
+}
+
+.cta-inner {
+  padding-top: 119px;
+  padding-bottom: 131px;
+  padding-left: 114px;
+}
+
+.cta-title {
+  font-size: 51px;
+  font-weight: 400;
+}
+
+.cta-phone {
+  display: block;
+  margin-top: 27px;
+  color: #fff;
+  font-size: 51px;
+  text-decoration: none;
+}
+
+.cta-text {
+  margin-top: 39px;
+  font-size: 30px;
+}
+
+/* ==========================================================
+   6. ЗОНЫ ОБСЛУЖИВАНИЯ
+   ========================================================== */
+
+.zones {
+  padding: 69px 0 162px;
+  background: #b3cae0;
+}
+
+/* Две колонки: карта слева, шаги справа */
+.zones-inner {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 142px;
+}
+
+.zone-col {
+  width: 500px;
+}
+
+.zones-title {
+  margin-bottom: 53px;
+  font-size: 32px;
+  font-weight: 400;
+}
+
+.map {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 500px;
+  max-width: 100%;
+  height: 300px;
+  background: #4d5a6c;
+  border-radius: 30px;
+  color: #fff;
+}
+
+.pills {
+  display: flex;
+  gap: 7px;
+  margin-top: 30px;
+  list-style: none;
+}
+
+.pills li {
+  display: flex;
+  align-items: center;
+  height: 50px;
+  padding: 0 14px;
+  background: #fff;
+  border-radius: 25px;
+  font-size: 24px;
+}
+
+.steps {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  list-style: none;
+}
+
+.step {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  width: 500px;
+  max-width: 100%;
+  height: 100px;
+  padding-left: 30px;
+  background: #fff;
+  border-radius: 30px;
+}
+
+.step-num {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  height: 50px;
+  background: #b3cae0;
+  border-radius: 50%;
+  color: #fff;
+}
+
+.step-text {
+  font-size: 28px;
+}
+
+/* ==========================================================
+   7. ОТЗЫВЫ, ВОДИТЕЛИ, ОБРАТНАЯ СВЯЗЬ
+   ========================================================== */
+
+.trust {
+  padding: 68px 0 56px;
+  background: #364c6b;
+  color: #fff;
+}
+
+.trust-title {
+  margin-bottom: 53px;
+  padding-left: 35px;
+  font-family: "Montserrat", "Montserrat Local", Arial, sans-serif;
+  font-size: 32px;
+  font-weight: 700;
+  text-align: center;
+}
+
+.reviews {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 46px;
+}
+
+.review {
+  width: 350px;
+  max-width: 100%;
+  min-height: 250px;
+  padding: 32px 31px;
+  background: #fff;
+  border-radius: 30px;
+  color: #000;
+}
+
+.review-top {
+  display: flex;
+  gap: 17px;
+}
+
+.avatar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 70px;
+  height: 70px;
+  flex-shrink: 0;
+  background: #b3cae0;
+  border-radius: 50%;
+}
+
+.review-name {
+  font-size: 24px;
+}
+
+/* Пять звёздочек в ряд */
+.stars {
+  display: flex;
+  gap: 3.2px;
+  margin-top: 5px;
+}
+
+.review-text {
+  margin-top: 22px;
+  color: #ababab;
+  font-size: 24px;
+}
+
+/* Нижний ряд: карточка водителя и форма */
+.info-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 42px;
+  margin-top: 86px;
+}
+
+.driver {
+  width: 550px;
+  max-width: 100%;
+  min-height: 400px;
+  padding: 39px 40px 38px;
+  background: #232d3c;
+  border-radius: 30px;
+}
+
+.driver-title {
+  font-size: 30px;
+  font-weight: 400;
+}
+
+.driver-text {
+  margin-top: 39px;
+  font-size: 24px;
+}
+
+.driver .btn {
+  margin-top: 171px;
+}
+
+.form-card {
+  width: 550px;
+  max-width: 100%;
+  min-height: 650px;
+  padding: 39px 43px 23px;
+  background: #fff;
+  border-radius: 30px;
+  color: #000;
+}
+
+.form-title {
+  margin-bottom: 39px;
+  font-size: 30px;
+  font-weight: 400;
+}
+
+.form-field {
+  margin-bottom: 19px;
+}
+
+.form-field label {
+  display: block;
+  margin-bottom: 20px;
+  font-size: 24px;
+}
+
+.form-field input,
+.form-field textarea {
+  width: 100%;
+  padding: 0 20px;
+  background: #e2e8f0;
+  border: 0;
+  border-radius: 10px;
+  font-family: inherit;
+  font-size: 24px;
+}
+
+.form-field input {
+  height: 50px;
+}
+
+.form-field textarea {
+  height: 150px;
+  padding-top: 12px;
+  resize: none;
+}
+
+.form-card .btn {
+  margin: 26px auto 0;
+}
+
+/* ==========================================================
+   8. ПОДВАЛ
+   ========================================================== */
+
+.footer {
+  background: #232d3c;
+  color: #fff;
+}
+
+.footer-inner {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 56px 50px 90px 130px;
+}
+
+.footer-col-1 {
+  width: 385px;
+}
+
+.footer-col-2 {
+  width: 271px;
+}
+
+.footer-col-3 {
+  width: 286px;
+}
+
+.footer-title {
+  margin-bottom: 49px;
+  font-size: 32px;
+  font-weight: 400;
+}
+
+.footer-text {
+  color: #d9d9d9;
+  font-size: 28px;
+}
+
+.footer-col-1 .footer-text {
+  margin-top: 44px;
+}
+
+.socials {
+  display: flex;
+  gap: 13px;
+  margin-top: 53px;
+}
+
+.social {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 65px;
+  height: 65px;
+  background: #a4b7ca;
+  border-radius: 50%;
+  color: #fff;
+}
+
+/* иконки внутри кружков чуть поднимаем — так в макете */
+.social svg {
+  position: relative;
+  top: -2px;
+}
+
+/* ==========================================================
+   9. ПЛАНШЕТ И ТЕЛЕФОН
+   Ниже 1200px колонки начинают переноситься сами,
+   а эти правила только уменьшают отступы и шрифты.
+   ========================================================== */
+
+@media (max-width: 1340px) {
+  .wrap {
+    padding-left: 50px;
+    padding-right: 50px;
+  }
+
+  .cards,
+  .reviews {
+    gap: 24px;
+  }
+
+  .info-row {
+    gap: 16px;
+  }
+
+  .zones-inner {
+    gap: 24px;
+  }
+}
+
+@media (max-width: 1200px) {
+  .wrap {
+    padding-left: 40px;
+    padding-right: 40px;
+  }
+
+  .header-inner {
+    padding: 0 40px;
+  }
+
+  /* Меню в шапке на узком экране прячем */
+  .menu {
+    display: none;
+  }
+
+  .hero-title {
+    font-size: 52px;
+  }
+
+  .cta-inner {
+    padding-left: 40px;
+  }
+
+  .cta-title,
+  .cta-phone {
+    font-size: 40px;
+  }
+
+  .footer-inner {
+    padding-left: 40px;
+    padding-right: 40px;
+  }
+
+  .footer-col-1,
+  .footer-col-2,
+  .footer-col-3 {
+    width: auto;
+  }
+}
+
+@media (max-width: 800px) {
+  .wrap {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  .header-inner {
+    height: 80px;
+    padding: 0 20px;
+  }
+
+  .header-btn {
+    width: 180px;
+    height: 50px;
+    border-radius: 25px;
+    font-size: 20px;
+  }
+
+  .hero-inner {
+    padding-top: 50px;
+    padding-bottom: 50px;
+  }
+
+  .hero-title {
+    margin-left: 0;
+    font-size: 36px;
+  }
+
+  .hero-text {
+    margin-left: 0;
+    font-size: 18px;
+  }
+
+  .order {
+    gap: 16px;
+    margin-top: 24px;
+    padding: 20px;
+  }
+
+  .field {
+    width: 100%;
+  }
+
+  .field label {
+    margin-bottom: 8px;
+  }
+
+  .field input {
+    width: 100%;
+    height: 56px;
+  }
+
+  .order .btn {
+    width: 100%;
+    height: 56px;
+  }
+
+  .features {
+    padding: 40px 0;
+  }
+
+  .features-title {
+    margin-bottom: 24px;
+    font-size: 26px;
+  }
+
+  .cards {
+    gap: 20px;
+  }
+
+  .card {
+    width: 100%;
+    max-width: 360px;
+    min-height: 0;
+  }
+
+  .cta-inner {
+    padding-top: 50px;
+    padding-bottom: 50px;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  .cta-title,
+  .cta-phone {
+    font-size: 28px;
+  }
+
+  .cta-text {
+    font-size: 18px;
+  }
+
+  .zones {
+    padding: 40px 0;
+  }
+
+  .zones-inner {
+    gap: 40px;
+  }
+
+  .zone-col {
+  width: 500px;
+}
+
+.zones-title {
+    margin-bottom: 20px;
+    font-size: 26px;
+  }
+
+  .map {
+    height: 200px;
+  }
+
+  .pills {
+    flex-wrap: wrap;
+  }
+
+  .step {
+    padding-left: 16px;
+  }
+
+  .trust {
+    padding: 40px 0;
+  }
+
+  .trust-title {
+    margin-bottom: 24px;
+    padding-left: 0;
+    font-size: 26px;
+  }
+
+  .review {
+    min-height: 0;
+    padding: 24px;
+  }
+
+  .info-row {
+    gap: 20px;
+    margin-top: 40px;
+  }
+
+  .driver,
+  .form-card {
+    min-height: 0;
+    padding: 24px;
+  }
+
+  .driver .btn {
+    margin-top: 24px;
+  }
+
+  .footer-inner {
+    flex-direction: column;
+    padding: 40px 20px;
+  }
+}
+
+/* ==========================================================
+   10. СТРАНИЦА «ВОДИТЕЛЯМ»
+   Отдельная страница по макету «Водителям».
+   Все классы начинаются с drv-, чтобы не мешать главной.
+   ========================================================== */
+
+.drv-page {
+  background: #364c6b;
+  color: #fff;
+}
+
+/* ------------------------- Шапка ------------------------- */
+
+.drv-header {
+  background: #364c6b;
+}
+
+.drv-header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 71px;
+  max-width: 1440px;
+  margin: 0 auto;
+  padding-left: 38px;
+  font-family: "Montserrat", "Montserrat Local", Arial, sans-serif;
+  font-size: 32px;
+}
+
+/* В макете надпись стоит чуть ниже центра шапки:
+   верхний отступ опускает её на 3px. */
+.drv-header-name {
+  padding-top: 6px;
+}
+
+/* --------------------- Первый экран --------------------- */
+
+.drv-hero-inner {
+  display: flex;
+  max-width: 1440px;
+  margin: 0 auto;
+}
+
+.drv-hero-left {
+  flex-shrink: 0;
+  width: 736px;
+  height: 433px;
+  padding: 40px 0 0 76px;
+  background: #232d3c;
+}
+
+.drv-input {
+  display: block;
+  width: 334px;
+  height: 59px;
+  padding: 0 20px;
+  background: #e2e8f0;
+  border: 0;
+  border-radius: 15px;
+  font-family: inherit;
+  font-size: 24px;
+  color: #232d3c;
+}
+
+.drv-title {
+  margin: 0;
+  font-size: 49px;
+  font-weight: 400;
+  line-height: 56px;
+}
+
+/* Текст в кнопке по макету стоит слева, а не по центру.
+   letter-spacing и полпикселя отступа подобраны по макету. */
+.drv-btn {
+  justify-content: flex-start;
+  width: 354px;
+  height: 69px;
+  margin-top: 32px;
+  padding: 1px 0 0 49.5px;
+  background: #1d4ed8;
+  border-radius: 25px;
+  letter-spacing: 0.2px;
+  font-size: 30px;
+}
+
+.drv-photo {
+  flex-shrink: 1;
+  min-width: 0;
+  width: 774px;
+  height: 435px;
+  margin-top: -2px;
+  margin-left: -70px;
+  object-fit: cover;
+}
+
+/* --------------------- Преимущества --------------------- */
+
+.drv-advantages {
+  padding-bottom: 59px;
+}
+
+.drv-adv-title {
+  margin: 0;
+  padding-top: 1px;
+  padding-left: 63px;
+  font-family: "Montserrat", "Montserrat Local", Arial, sans-serif;
+  font-size: 49px;
+  font-weight: 400;
+  line-height: 60px;
+  text-align: center;
+}
+
+/* Две строки заголовка в макете сдвинуты друг относительно друга
+   на пару пикселей — выравниваем отступами. */
+.drv-adv-line {
+  display: block;
+}
+
+.drv-adv-line-1 {
+  padding-right: 6px;
+}
+
+.drv-adv-line-2 {
+  padding-left: 3px;
+}
+
+.drv-cards {
+  display: flex;
+  justify-content: center;
+  gap: 53px;
+  margin-top: 30px;
+}
+
+.drv-card {
+  flex-shrink: 0;
+  width: 402px;
+  height: 310px;
+  background: #232d3c;
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+/* -------- Карточка 1: расписание и календарь -------- */
+
+.drv-card-1 {
+  display: flex;
+  align-items: flex-start;
+  padding: 16px 0 0 16px;
+}
+
+.drv-card-1-text {
+  flex-shrink: 0;
+  width: 195px;
+  margin: 0;
+  font-size: 25px;
+  line-height: 29px;
+}
+
+.drv-calendar {
+  flex-shrink: 0;
+  margin-top: 23px;
+  margin-left: 4px;
+}
+
+.drv-cells {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px 4px;
+  width: 212px;
+}
+
+.drv-cell {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  height: 50px;
+  background: #132142;
+  border-radius: 10px;
+  font-family: "Montserrat", "Montserrat Local", Arial, sans-serif;
+  font-size: 25px;
+  line-height: 1;
+}
+
+.drv-cell-blue {
+  background: #203c84;
+}
+
+.drv-cell-empty {
+  background: none;
+}
+
+/* -------- Карточка 2: доход -------- */
+
+.drv-card-2 {
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 26px;
+}
+
+.drv-deco2 {
+  display: flex;
+  align-items: flex-start;
+  gap: 23px;
+  padding: 31px 0 0 53px;
+}
+
+.drv-ruble {
+  display: block;
+  flex-shrink: 0;
+  margin-top: 28px;
+}
+
+.drv-bolt {
+  display: block;
+  flex-shrink: 0;
+}
+
+/* margin-top: auto прижимает подпись к низу карточки */
+.drv-card-2-text {
+  margin: auto 0 0;
+  padding-right: 1px;
+  font-size: 25px;
+  line-height: 29px;
+  text-align: center;
+}
+
+/* -------- Карточка 3: бонусы и галочки -------- */
+
+.drv-card-3 {
+  display: flex;
+  align-items: flex-start;
+}
+
+.drv-card-3-text {
+  flex-shrink: 0;
+  width: 268px;
+  margin: 0 0 0 32px;
+  padding-top: 82px;
+  font-size: 25px;
+  line-height: 29px;
+  white-space: nowrap;
+}
+
+/* Галочки стоят «лесенкой»: средняя сдвинута влево.
+   Соседние кружки в макете почти касаются — отсюда -0.84px. */
+.drv-checks {
+  flex-shrink: 0;
+  width: 75px;
+  padding-top: 46px;
+}
+
+.drv-check {
+  display: block;
+  overflow: visible;
+}
+
+.drv-check-1,
+.drv-check-3 {
+  margin-left: 33px;
+}
+
+.drv-check-2,
+.drv-check-3 {
+  margin-top: -0.84px;
+}
+
+/* --------------------- Адаптивность --------------------- */
+
+@media (max-width: 1340px) {
+  .drv-hero-left {
+    padding-left: 40px;
+  }
+
+  .drv-adv-title {
+    padding-left: 0;
+  }
+
+  .drv-cards {
+    flex-wrap: wrap;
+    gap: 24px;
+    padding: 0 20px;
+  }
+}
+
+@media (max-width: 1100px) {
+  .drv-hero-inner {
+    flex-direction: column;
+  }
+
+  .drv-photo {
+    order: -1;
+    width: 100%;
+    height: 340px;
+    margin: 0;
+  }
+
+  .drv-hero-left {
+    width: 100%;
+    height: auto;
+    padding: 32px 40px 40px;
+  }
+
+  .drv-advantages {
+    padding: 24px 20px 40px;
+  }
+
+  .drv-adv-title {
+    font-size: 38px;
+    line-height: 48px;
+  }
+
+  .drv-cards {
+    margin-top: 24px;
+  }
+
+  .drv-card {
+    height: auto;
+    min-height: 310px;
+  }
+}
+
+@media (max-width: 800px) {
+  .drv-header-inner {
+    height: 60px;
+    padding-left: 0;
+    font-size: 26px;
+  }
+
+  .drv-header-name {
+    top: 2px;
+  }
+
+  .drv-hero-left {
+    padding: 24px 20px 32px;
+  }
+
+  .drv-input {
+    width: 100%;
+    height: 52px;
+    font-size: 18px;
+  }
+
+  .drv-title {
+    font-size: 34px;
+    line-height: 40px;
+  }
+
+  .drv-btn {
+    width: 100%;
+    height: 58px;
+    margin-top: 24px;
+    font-size: 24px;
+  }
+
+  .drv-photo {
+    height: 240px;
+  }
+
+  .drv-advantages {
+    padding: 24px 16px 32px;
+  }
+
+  .drv-adv-title {
+    font-size: 28px;
+    line-height: 36px;
+  }
+
+  .drv-cards {
+    gap: 16px;
+    padding: 0;
+  }
+
+  .drv-card {
+    width: 100%;
+    max-width: 402px;
+  }
+
+  .drv-card-1 {
+    padding-bottom: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .drv-card-3 {
+    flex-wrap: wrap;
+    align-content: flex-start;
+    padding-bottom: 16px;
+  }
+
+  .drv-card-3-text {
+    width: auto;
+    margin-left: 17px;
+    padding-top: 24px;
+  }
+
+  .drv-checks {
+    display: flex;
+    width: auto;
+    padding: 16px 0 0 17px;
+  }
+
+  .drv-checks .drv-check {
+    margin: 0 8px 0 0;
+  }
+}

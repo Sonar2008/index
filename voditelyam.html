@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Водителям — С ветерком</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Alice&family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+ <link rel="stylesheet" href="style(1).css">
+</head>
+<body class="drv-page">
+
+<!-- ==========================================================
+     ИКОНКИ ИЗ МАКЕТА
+     Рисунки описаны один раз. Ниже в разметке подключаются
+     одной строкой: <use href="#drv-check"/>.
+     ========================================================== -->
+<svg class="sprite" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg">
+  <symbol id="drv-ruble" viewBox="572.429 714.429 185.142 185.142" overflow="visible">
+    <path d="M665 899.572C613.874 899.572 572.429 858.127 572.429 807C572.429 755.874 613.874 714.429 665 714.429C716.126 714.429 757.571 755.874 757.571 807C757.571 858.127 716.126 899.572 665 899.572ZM654.277 775.491H667.16C678.998 775.491 684.945 781.69 684.945 791.502C684.945 801.376 678.998 807.637 667.094 807.637H654.277V775.491ZM670.469 818.68C687.522 818.68 698.75 807.147 698.75 791.44C698.75 775.676 687.769 764.02 670.901 764.02H640.719V811.687H628.627V818.68H640.715V830.579H628.627V837.51H640.715V850.883H654.269V837.51H678.87V830.579H654.269V818.68H670.469Z" fill="#1D4ED8" fill-rule="evenodd"/>
+  </symbol>
+  <symbol id="drv-bolt" viewBox="780.1 686.4 66.3 108.1" overflow="visible">
+    <path d="M794.976 689.845C795.156 689.145 795.557 688.522 796.12 688.069C796.684 687.616 797.378 687.358 798.101 687.333L824.834 686.4C825.364 686.382 825.889 686.49 826.369 686.715C826.848 686.94 827.267 687.275 827.592 687.694C827.916 688.112 828.136 688.602 828.234 689.122C828.332 689.643 828.305 690.179 828.156 690.687L817.506 726.805L842.943 725.917C843.569 725.895 844.188 726.049 844.731 726.361C845.273 726.674 845.717 727.132 846.012 727.685C846.307 728.237 846.44 728.862 846.398 729.486C846.355 730.111 846.138 730.711 845.771 731.219L801.087 793.003C800.629 793.639 799.963 794.094 799.204 794.288C798.445 794.483 797.642 794.405 796.935 794.068C796.227 793.731 795.661 793.156 795.334 792.444C795.007 791.732 794.941 790.928 795.146 790.172L805.818 750.634L783.609 751.409C783.089 751.427 782.572 751.325 782.1 751.108C781.627 750.892 781.211 750.569 780.885 750.164C780.559 749.759 780.332 749.283 780.222 748.775C780.112 748.267 780.122 747.741 780.251 747.237L794.976 689.845Z" fill="#1D4ED8"/>
+  </symbol>
+  <symbol id="drv-check" viewBox="0 0 42.84 42.84" overflow="visible">
+    <circle cx="21.42" cy="21.42" r="20.42" stroke="#1D4ED8" stroke-width="2" fill="none"/>
+    <path d="M13.25 22.44L19.38 28.57L29.59 16.32" stroke="#1D4ED8" stroke-width="2"
+          stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+  </symbol>
+</svg>
+
+<!-- ============================ ШАПКА ============================ -->
+<header class="drv-header">
+  <div class="drv-header-inner">
+    <span class="drv-header-name">Водителям</span>
+  </div>
+</header>
+
+<!-- ========================= ПЕРВЫЙ ЭКРАН ========================= -->
+<section class="drv-hero">
+  <div class="drv-hero-inner">
+
+    <div class="drv-hero-left">
+      <!-- <input class="drv-input" type="text" aria-label="Ваше имя"> -->
+      <h1 class="drv-title">Работа в такси<br>с партнёрами<br>С ветерком</h1>
+      <a class="btn drv-btn" href="Заявка водителя.html">Оставьте заявку</a>
+    </div>
+
+    <img class="drv-photo" src="мужик.png" alt="Водитель такси за работой">
+
+  </div>
+</section>
+
+<!-- ========================= ПРЕИМУЩЕСТВА ========================= -->
+<section class="drv-advantages">
+
+  <h2 class="drv-adv-title">
+    <span class="drv-adv-line drv-adv-line-1">Будьте водителем</span>
+    <span class="drv-adv-line drv-adv-line-2">в свободное время</span>
+  </h2>
+
+  <div class="drv-cards">
+
+    <!-- Карточка 1: свой график -->
+    <article class="drv-card drv-card-1">
+
+      <p class="drv-card-1-text">Совмещайте<br>своё расписание<br>с любыми<br>делами</p>
+
+      <div class="drv-calendar">
+        <div class="drv-cells">
+          <span class="drv-cell drv-cell-empty"></span>
+          <span class="drv-cell"></span>
+          <span class="drv-cell"></span>
+          <span class="drv-cell"></span>
+
+          <span class="drv-cell"></span>
+          <span class="drv-cell drv-cell-blue">8</span>
+          <span class="drv-cell"></span>
+          <span class="drv-cell"></span>
+
+          <span class="drv-cell"></span>
+          <span class="drv-cell"></span>
+          <span class="drv-cell"></span>
+          <span class="drv-cell"></span>
+
+          <span class="drv-cell drv-cell-blue">17</span>
+          <span class="drv-cell"></span>
+          <span class="drv-cell"></span>
+          <span class="drv-cell"></span>
+        </div>
+      </div>
+
+    </article>
+
+    <!-- Карточка 2: доход -->
+    <article class="drv-card drv-card-2">
+
+      <div class="drv-deco2">
+        <svg class="drv-ruble" width="185.14" height="185.14">
+          <use href="#drv-ruble"/>
+        </svg>
+        <svg class="drv-bolt" width="66.3" height="108.1">
+          <use href="#drv-bolt"/>
+        </svg>
+      </div>
+
+      <p class="drv-card-2-text">Доход на то, что вам нужно</p>
+
+    </article>
+
+    <!-- Карточка 3: бонусы -->
+    <article class="drv-card drv-card-3">
+
+      <p class="drv-card-3-text">Получайте больше<br>с системой бонусов<br>для партнёров<br>и персональных целей</p>
+
+      <div class="drv-checks">
+        <svg class="drv-check drv-check-1" width="42.84" height="42.84">
+          <use href="#drv-check"/>
+        </svg>
+        <svg class="drv-check drv-check-2" width="42.84" height="42.84">
+          <use href="#drv-check"/>
+        </svg>
+        <svg class="drv-check drv-check-3" width="42.84" height="42.84">
+          <use href="#drv-check"/>
+        </svg>
+      </div>
+
+    </article>
+
+  </div>
+
+</section>
+
+</body>
+</html>
